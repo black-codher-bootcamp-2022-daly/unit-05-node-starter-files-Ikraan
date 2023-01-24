@@ -6,10 +6,12 @@ const port = 8080
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end('Hello World\n')
+  res.setHeader('Content-Type', 'application/json')
+  res.end(JSON.stringify({
+    greeting:'Hey!',
+    name: "Ikraan",
+}))
 })
-
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`)
 })
